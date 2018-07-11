@@ -1,0 +1,9 @@
+server:
+  port: 8957
+  context-path: /em-info-crawler
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/em_info_crawler
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
