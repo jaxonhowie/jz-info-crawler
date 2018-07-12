@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.jz.dao.JobDescriptionDao">
+
+    <resultMap id="getMap" type="org.jz.model.JobDescription">
+        <result column="OID" property="oid" jdbcType="NUMERIC"/>
+        <result column="TRACE_ID" property="traceId" jdbcType="VARCHAR"/>
+        <result column="CITY" property="city" jdbcType="VARCHAR"/>
+        <result column="SEARCH_KEY" property="searchKey" jdbcType="VARCHAR"/>
+        <result column="TITLE" property="title" jdbcType="VARCHAR"/>
+        <result column="POSITION" property="position" jdbcType="VARCHAR"/>
+        <result column="CORP_NAME" property="corpName" jdbcType="VARCHAR"/>
+        <result column="CORP_TYPE" property="corpType" jdbcType="VARCHAR"/>
+        <result column="CORP_INDUSTRY" property="corpIndustry" jdbcType="VARCHAR"/>
+        <result column="CORP_SIZE" property="corpSize" jdbcType="VARCHAR"/>
+        <result column="JD" property="jd" jdbcType="VARCHAR"/>
+        <result column="SALARY" property="salary" jdbcType="VARCHAR"/>
+        <result column="REQUIREMENT" property="requirement" jdbcType="VARCHAR"/>
+        <result column="WELFARE" property="welfare" jdbcType="VARCHAR"/>
+        <result column="KEYWORDS" property="keywords" jdbcType="VARCHAR"/>
+        <result column="OITIME" property="oitime" jdbcType="TIMESTAMP"/>
+        <result column="OUTIME" property="outime" jdbcType="TIMESTAMP"/>
+        <result column="IS_DEL" property="isDel" jdbcType="CHAR"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="org.jz.model.JobDescription">
+      INSERT INTO jobdescription
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="oid != null">OID,</if>
+            <if test="traceId != null">TRACE_ID,</if>
+            <if test="city != null">CITY,</if>
+            <if test="searchKey != null">SEARCH_KEY,</if>
+            <if test="title != null">TITLE,</if>
+            <if test="position != null">POSITION,</if>
+            <if test="corpName != null">CORP_NAME,</if>
+            <if test="corpType != null">CORP_TYPE,</if>
+            <if test="corpIndustry != null">CORP_INDUSTRY,</if>
+            <if test="corpSize != null">CORP_SIZE,</if>
+            <if test="jd != null">JD,</if>
+            <if test="salary != null">SALARY,</if>
+            <if test="requirement != null">REQUIREMENT,</if>
+            <if test="welfare != null">WELFARE,</if>
+            <if test="keywords != null">KEYWORDS,</if>
+            <if test="oitime != null">OITIME,</if>
+            <if test="outime != null">OUTIME,</if>
+            <if test="isDel != null">IS_DEL,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="oid != null">#{oid},</if>
+            <if test="traceId != null">#{traceId},</if>
+            <if test="city != null">#{city},</if>
+            <if test="searchKey != null">#{searchKey},</if>
+            <if test="title != null">#{title},</if>
+            <if test="position != null">#{position},</if>
+            <if test="corpName != null">#{corpName},</if>
+            <if test="corpType != null">#{corpType},</if>
+            <if test="corpIndustry != null">#{corpIndustry},</if>
+            <if test="corpSize != null">#{corpSize},</if>
+            <if test="jd != null">#{jd},</if>
+            <if test="salary != null">#{salary},</if>
+            <if test="requirement != null">#{requirement},</if>
+            <if test="welfare != null">#{welfare},</if>
+            <if test="keywords != null">#{keywords},</if>
+            <if test="oitime != null">#{oitime},</if>
+            <if test="outime != null">#{outime},</if>
+            <if test="isDel != null">#{isDel},</if>
+        </trim>
+    </insert>
+
+</mapper>
