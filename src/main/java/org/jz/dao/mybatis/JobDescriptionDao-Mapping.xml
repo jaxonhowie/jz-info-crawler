@@ -12,6 +12,7 @@
         <result column="SEARCH_KEY" property="searchKey" jdbcType="VARCHAR"/>
         <result column="TITLE" property="title" jdbcType="VARCHAR"/>
         <result column="POSITION" property="position" jdbcType="VARCHAR"/>
+        <result column="LOCATION" property="location" jdbcType="VARCHAR"/>
         <result column="CORP_NAME" property="corpName" jdbcType="VARCHAR"/>
         <result column="CORP_TYPE" property="corpType" jdbcType="VARCHAR"/>
         <result column="CORP_INDUSTRY" property="corpIndustry" jdbcType="VARCHAR"/>
@@ -35,6 +36,7 @@
             <if test="searchKey != null">SEARCH_KEY,</if>
             <if test="title != null">TITLE,</if>
             <if test="position != null">POSITION,</if>
+            <if test="location != null">LOCATION,</if>
             <if test="corpName != null">CORP_NAME,</if>
             <if test="corpType != null">CORP_TYPE,</if>
             <if test="corpIndustry != null">CORP_INDUSTRY,</if>
@@ -55,6 +57,7 @@
             <if test="searchKey != null">#{searchKey},</if>
             <if test="title != null">#{title},</if>
             <if test="position != null">#{position},</if>
+            <if test="location != null">#{location},</if>
             <if test="corpName != null">#{corpName},</if>
             <if test="corpType != null">#{corpType},</if>
             <if test="corpIndustry != null">#{corpIndustry},</if>

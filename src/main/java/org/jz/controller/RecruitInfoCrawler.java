@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2018/7/12
  */
 @RestController
-@RequestMapping("/positions")
+@RequestMapping("/jd")
 public class RecruitInfoCrawler extends BaseController {
 
     private AsyncTaskExecutor asyncTaskExecutor;
@@ -26,7 +26,7 @@ public class RecruitInfoCrawler extends BaseController {
     Position51Job position51Job;
 
     @PostMapping("/get")
-    public Result startSpider(String website) {
+    public Result startSpider(String website, String startPage) {
         if (StringUtils.isBlank(website)) {
             return result(RspCode.PARAMS_ERROR);
         }
@@ -34,7 +34,7 @@ public class RecruitInfoCrawler extends BaseController {
         switch (website.toUpperCase()) {
             case Constants.SITE_NAME_51 :
                 asyncTaskExecutor.execute(() -> {
-                    position51Job.startSpider();
+                    position51Job.startSpider(startPage);
                 });
                 break;
             case Constants.SITE_NAME_ZL:
@@ -45,7 +45,6 @@ public class RecruitInfoCrawler extends BaseController {
             default:
                 break;
         }
-
         return result(RspCode.SUCCESS,"开始爬取");
     }
 }

@@ -16,6 +16,8 @@ public class JobDescription implements Serializable {
 
     @Id
     private Long oid;
+    private String traceId;
+
     private String city;
     /**搜索关键字*/
     private String searchKey;
@@ -23,6 +25,8 @@ public class JobDescription implements Serializable {
     private String title;
     /**职位*/
     private String position;
+    /**公司位置*/
+    private String location;
     /**企业名*/
     private String corpName;
     /**企业类型*/
@@ -46,6 +50,25 @@ public class JobDescription implements Serializable {
     private Date outime;
     private String isDel;
 
+    public static JobDescription newInstance(){
+        return new JobDescription();
+    }
+
+    public String getTraceId() {
+        return traceId;
+    }
+
+    public void setTraceId(String traceId) {
+        this.traceId = traceId;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
     public Date getOitime() {
         return oitime;
