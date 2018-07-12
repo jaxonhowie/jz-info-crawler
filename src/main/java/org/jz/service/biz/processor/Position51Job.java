@@ -32,7 +32,7 @@ public class Position51Job implements PageProcessor {
     private static final String TARGET_URL = "https://jobs.51job.com/shanghai\\w+\\d+\\.html?s=01&t=\\d";
 
     private Site site = Site.me()
-            .setSleepTime(1500+(int)(Math.random()*5000))
+            .setSleepTime(1500+RandomUtils.getRandomDelay())
             .setRetryTimes(3);
 
     @Override
@@ -57,7 +57,6 @@ public class Position51Job implements PageProcessor {
             instance.setCorpIndustry(corpInfo.split("\\|")[2].replaceAll("&nbsp;",""));
             /**企业规模*/
             instance.setCorpSize(corpInfo.split("\\|")[1].replaceAll("&nbsp;",""));
-
             /**职位描述*/
             List<String> jds = page.getHtml().xpath("//div[@class='bmsg job_msg inbox']/p/text()").all();
             StringBuilder sb = new StringBuilder();

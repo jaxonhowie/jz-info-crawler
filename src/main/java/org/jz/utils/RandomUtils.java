@@ -11,6 +11,10 @@ public class RandomUtils {
 
     private static Random rd = new Random();
 
+    public static int getRandomDelay(){
+        return rd.nextInt();
+    }
+
     public static Long getLongKey(){
         return rd.nextLong();
     }
