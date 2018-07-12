@@ -2,8 +2,11 @@ package org.jz.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang.StringUtils;
+import org.jz.commons.Constants;
 import org.jz.commons.Result;
 import org.jz.commons.RspCode;
+import org.jz.service.biz.processor.Position51Job;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.task.AsyncTaskExecutor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,19 +22,22 @@ public class RecruitInfoCrawler extends BaseController {
 
     private AsyncTaskExecutor asyncTaskExecutor;
 
+    @Autowired
+    Position51Job position51Job;
+
     @PostMapping("/get")
     public Result startSpider(String website) {
         if (StringUtils.isBlank(website)) {
             return result(RspCode.PARAMS_ERROR);
         }
 
-        switch (website) {
-            case "51job" :
+        switch (website.toUpperCase()) {
+            case Constants.SITE_NAME_51 :
                 asyncTaskExecutor.execute(() -> {
-
+                    position51Job.startSpider();
                 });
                 break;
-            case "zhilian":
+            case Constants.SITE_NAME_ZL:
                 asyncTaskExecutor.execute(()->{
 
                 });

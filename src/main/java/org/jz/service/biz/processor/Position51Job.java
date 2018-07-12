@@ -1,4 +1,4 @@
-package org.jz.service.biz;
+package org.jz.service.biz.processor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,10 +11,10 @@ import us.codecraft.webmagic.processor.PageProcessor;
  * @author Hongyi Zheng
  * @date 2018/7/11
  */
-@Component("stockInfo")
-public class StockInfo implements PageProcessor {
+@Component("position51Job")
+public class Position51Job implements PageProcessor {
 
-    private static final Logger logger = LoggerFactory.getLogger(StockInfo.class);
+    private static final Logger logger = LoggerFactory.getLogger(Position51Job.class);
 
     //目标页url
     private static final String TARGET_URL = "";
@@ -45,5 +45,9 @@ public class StockInfo implements PageProcessor {
     @Override
     public Site getSite() {
         return site;
+    }
+
+    public void startSpider(){
+
     }
 }
