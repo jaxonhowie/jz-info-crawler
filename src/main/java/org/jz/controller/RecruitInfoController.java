@@ -18,8 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/jd")
-public class RecruitInfoCrawler extends BaseController {
+public class RecruitInfoController extends BaseController {
 
+    @Autowired
     private AsyncTaskExecutor asyncTaskExecutor;
 
     @Autowired
