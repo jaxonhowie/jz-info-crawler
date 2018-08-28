@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.jz</groupId>
-    <artifactId>em-info-crawler</artifactId>
+    <artifactId>jz-info-crawler</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>em-info-crawler</name>
+    <name>jz-info-crawler</name>
     <description>财经信息采集</description>
 
     <parent>
